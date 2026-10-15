@@ -25,14 +25,22 @@ public class Oliva4 {
 
             switch (choice) {
                 case 1:
-                    /*Code for command 1*/
+                    dev1.power();
+                    break;
                 case 2:
-                    /*Code for command 2*/
+                    System.out.println("Enter Brightness level (0-10): ");
+                    
+                    int brightness = scanner.nextInt();
+
+                    if(dev1 instanceof SmartLight) {
+                        ((SmartLight) dev1).adjustBrightness(brightness);
+                    }
+                    break;
 			/*Clue: Look up "Pattern Matching" in Java Polymorphism*/
                 case 3:
                     break;
                 default:
-                    /*Code for invalid commands*/
+                    System.out.println("Invalid choice. Please try again.")
             }
         } while (choice != 3);
 
